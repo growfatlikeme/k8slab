@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: growfatlikeme-echo-app-ingress
+  namespace: growfatlikeme-eks-activity
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: "growfatlikeme-echoapp.sctp-sandbox.com" # Route53 Record
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "growfatlikeme-echoapp.sctp-sandbox.com" # Route53 Record
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: growfatlikeme-echo-service
+                port:
+                  number: 80

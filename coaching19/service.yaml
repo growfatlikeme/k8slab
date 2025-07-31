@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: growfatlikeme-echo-service
+  namespace: growfatlikeme-eks-activity
+spec:
+  selector:
+    app: echo-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5678
