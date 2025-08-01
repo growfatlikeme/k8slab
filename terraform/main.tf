@@ -9,7 +9,7 @@ module "eks" {
   bootstrap_self_managed_addons = true
 
   cluster_name    = "${local.name_prefix}-eks-cluster"
-  cluster_version = "1.32"
+  cluster_version = "1.33"
 
   cluster_addons = {
     coredns                = {}
@@ -28,9 +28,9 @@ module "eks" {
     learner_ng = {
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["t3.micro"]
-      min_size       = 3
-      max_size       = 3
-      desired_size   = 3
+      min_size       = 2
+      max_size       = 4
+      desired_size   = 2
     }
   }
 }
