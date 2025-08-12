@@ -238,3 +238,11 @@ __marimo__/
 #configmap and secret files
 *configmap*.yaml
 *secrets.yaml
+
+coaching19/*
+fateks/*
+lab3_7/*
+lab3_8/*
+
+extract.txt
+
